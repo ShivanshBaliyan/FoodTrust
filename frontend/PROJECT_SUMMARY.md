@@ -1,8 +1,8 @@
-# VibeLens Frontend - Complete Implementation
+# FoodTrust Frontend - Complete Implementation
 
 ## 🎯 What Was Built
 
-A modern, production-ready React frontend for the VibeLens food sentiment analytics platform with:
+A modern, production-ready React frontend for the FoodTrust food sentiment analytics platform with:
 
 - ✅ **5 Full Pages** (Home, Analyze, Recommend, Reviews, Add Store)
 - ✅ **Modern UI** using Tailwind CSS with custom food/trust color palette
@@ -176,4 +176,4 @@ This frontend is:
 
 ---
 
-Built with ❤️ for VibeLens
+Built with ❤️ for FoodTrust

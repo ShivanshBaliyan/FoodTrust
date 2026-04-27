@@ -1,6 +1,6 @@
-# VibeLens Frontend
+# FoodTrust Frontend
 
-Modern, beautiful frontend for VibeLens - Food Sentiment Analytics Platform.
+Modern, beautiful frontend for FoodTrust - Food Sentiment Analytics Platform.
 
 ## Features
 

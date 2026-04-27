@@ -1,4 +1,4 @@
-# VibeLens Frontend - Setup Guide
+# FoodTrust Frontend - Setup Guide
 
 ## Quick Start
 
