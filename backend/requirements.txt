@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+pandas
+sentence-transformers
+torch
+transformers
+python-dotenv
+pydantic
+
+# Additional libraries
+datasets
+scikit-learn
+joblib
+python-multipart

@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/* Custom color utilities for components */
+@layer utilities {
+  .bg-trust { background-color: #26408B; }
+  .bg-trust-light { background-color: #3B5FBF; }
+  .bg-trust-dark { background-color: #1A2E5E; }
+  
+  .bg-cream { background-color: #F2F5EA; }
+  .bg-cream-soft { background-color: #FFEED6; }
+  .bg-cream-light { background-color: #FAFAFA; }
+  
+  .bg-accent { background-color: #E85A3F; }
+  .bg-accent-light { background-color: #FF6B4A; }
+  .bg-accent-dark { background-color: #D84A2F; }
+  
+  .bg-positive { background-color: #6BD425; }
+  .bg-positive-light { background-color: #8EE64F; }
+  .bg-positive-dark { background-color: #5BB21F; }
+  
+  .bg-warning { background-color: #FFEC51; }
+  .bg-warning-light { background-color: #FFF171; }
+  .bg-warning-dark { background-color: #E6D449; }
+  
+  .bg-deep { background-color: #2B061E; }
+  .bg-deep-darker { background-color: #0D0221; }
+  
+  .text-trust { color: #26408B; }
+  .text-trust-light { color: #3B5FBF; }
+  .text-trust-dark { color: #1A2E5E; }
+  
+  .text-cream { color: #F2F5EA; }
+  .text-cream-soft { color: #FFEED6; }
+  .text-cream-light { color: #FAFAFA; }
+  
+  .text-accent { color: #E85A3F; }
+  .text-accent-light { color: #FF6B4A; }
+  .text-accent-dark { color: #D84A2F; }
+  
+  .text-positive { color: #6BD425; }
+  .text-positive-light { color: #8EE64F; }
+  .text-positive-dark { color: #5BB21F; }
+  
+  .text-warning { color: #FFEC51; }
+  .text-warning-light { color: #FFF171; }
+  .text-warning-dark { color: #E6D449; }
+  
+  .text-deep { color: #2B061E; }
+  .text-deep-darker { color: #0D0221; }
+  
+  .border-trust { border-color: #26408B; }
+  .border-cream { border-color: #F2F5EA; }
+  .border-accent { border-color: #E85A3F; }
+  .border-positive { border-color: #6BD425; }
+  .border-warning { border-color: #FFEC51; }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

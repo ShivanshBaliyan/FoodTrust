@@ -1,0 +1,72 @@
+=========================================
+  VibeLens Frontend - Quick Start
+=========================================
+
+1. INSTALLATION
+   -------------
+   cd frontend
+   npm install
+
+2. ENVIRONMENT SETUP
+   ------------------
+   Create .env file with:
+   VITE_API_URL=http://localhost:8000
+
+3. START DEVELOPMENT
+   ------------------
+   npm run dev
+   
+   App runs at: http://localhost:3000
+
+4. BUILD FOR PRODUCTION
+   ---------------------
+   npm run build
+
+=========================================
+   AVAILABLE ROUTES
+=========================================
+
+/           - Home page with feature overview
+/analyze    - Sentiment analysis tool
+/recommend  - Restaurant recommendations
+/reviews    - Browse all reviews
+/add-store  - Add new store/restaurant
+
+=========================================
+   FEATURES IMPLEMENTED
+=========================================
+
+✅ Modern UI with Tailwind CSS
+✅ Food/trust-inspired color palette
+✅ Framer Motion animations
+✅ Toast notification system
+✅ Loading shimmer effects
+✅ Responsive design
+✅ Clean API integration
+✅ Organized file structure
+
+=========================================
+   COLOR PALETTE
+=========================================
+
+Primary/Trust:    #26408B (Deep Blue)
+Background:       #F2F5EA (Soft Cream)
+CTA:              #E85A3F (Terracotta)
+Positive:         #6BD425 (Sage Green)
+Warning:          #FFEC51 (Mustard Yellow)
+Deep Purple:      #2B061E (Text)
+
+=========================================
+   API INTEGRATION
+=========================================
+
+All API calls go through:
+- utils/apiClient.js (Axios configuration)
+- utils/api.js (Endpoint definitions)
+
+Interceptors handle:
+- Request tokens
+- Error toasts
+- Response transformation
+
+=========================================

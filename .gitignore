@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+.venv/
+env/
+.env
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# Models (avoid pushing large fine-tuned models)
+backend/models/
+backend/transformers_model/
+
+# Node / React
+node_modules/
+dist/
+build/
+.npm/
+.eslintcache
+
+# OS files
+.DS_Store
+Thumbs.db
