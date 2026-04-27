@@ -4,6 +4,10 @@ from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer, util
 from app.db import SessionLocal, Store
 import json
+import torch
+
+# Limit PyTorch threads to reduce memory overhead
+torch.set_num_threads(1)
 
 load_dotenv()
 EMB_MODEL_NAME = os.environ.get("EMB_MODEL_NAME", "all-MiniLM-L6-v2")
@@ -12,6 +16,11 @@ ALPHA = float(os.environ.get("RECOMMEND_ALPHA", 0.6))
 BETA = float(os.environ.get("RECOMMEND_BETA", 0.4))
 
 emb_model = SentenceTransformer(EMB_MODEL_NAME)
+
+# Quantize the underlying transformer model to save RAM
+emb_model[0].auto_model = torch.quantization.quantize_dynamic(
+    emb_model[0].auto_model, {torch.nn.Linear}, dtype=torch.qint8
+)
 
 def compute_embedding(text):
     emb = emb_model.encode(text, convert_to_tensor=False)

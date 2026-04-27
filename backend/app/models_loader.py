@@ -3,6 +3,9 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipe
 from dotenv import load_dotenv
 import torch
 
+# Limit PyTorch threads to reduce memory overhead
+torch.set_num_threads(1)
+
 load_dotenv()
 SENT_MODEL_DIR = os.environ.get("SENTIMENT_MODEL_DIR", "./models/distil_domain")
 
@@ -12,9 +15,15 @@ def load_sentiment_pipeline(model_dir=SENT_MODEL_DIR):
         return None
     tokenizer = AutoTokenizer.from_pretrained(model_dir)
     model = AutoModelForSequenceClassification.from_pretrained(model_dir)
+    
+    # Quantize the model dynamically to save ~50% RAM
+    model = torch.quantization.quantize_dynamic(
+        model, {torch.nn.Linear}, dtype=torch.qint8
+    )
+    
     device = 0 if torch.cuda.is_available() else -1
     pipe = pipeline("sentiment-analysis", model=model, tokenizer=tokenizer, device=device)
-    print(f"[models_loader] Loaded sentiment model from {model_dir} on {'cuda' if device==0 else 'cpu'}")
+    print(f"[models_loader] Loaded (quantized) sentiment model from {model_dir} on {'cuda' if device==0 else 'cpu'}")
     return pipe
 
 sentiment_pipeline = load_sentiment_pipeline()
